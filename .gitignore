@@ -11,5 +11,4 @@
 
 # Ignore MacOS, VS Code, binaries, and other non-vital files
 .DS_Store
-.vscode/*
 *.dSYM
