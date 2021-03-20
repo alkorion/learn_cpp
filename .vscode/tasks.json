@@ -1,0 +1,31 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	
+	// (AL) This tasks.json pulled from https://code.visualstudio.com/docs/cpp/config-clang-mac
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"type": "shell",
+		"label": "clang++ build active file",
+		"command": "/usr/bin/clang++",
+		"args": [
+		  "-std=c++17",
+		  "-stdlib=libc++",
+		  "-g",
+		  "${file}",
+		  "-o",
+		  "${fileDirname}/${fileBasenameNoExtension}",
+		  "-Wall" // adds extensive warnings: https://www.reddit.com/r/vscode/comments/gt6atz/visual_studiolike_warnings_for_vs_code_c/
+		],
+		"options": {
+		  "cwd": "${workspaceFolder}"
+		},
+		"problemMatcher": ["$gcc"],
+		"group": {
+		  "kind": "build",
+		  "isDefault": true
+		}
+	  }
+	]
+  }
