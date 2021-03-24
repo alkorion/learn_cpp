@@ -14,10 +14,11 @@
                 "-std=c++17",
                 "-stdlib=libc++",
                 "-g",
-				"${file}",
+                "${file}",
+                // "${fileDirname}/*.cpp",
+                // "${workspaceFolder}/*.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-				// add additional levels of warnings (all, extra, pedantic)
                 "-Wall",
                 "-Wextra",
                 "-Wpedantic"
@@ -29,9 +30,9 @@
                 "$gcc"
             ],
             "group": {
-				"kind": "build",
-				"isDefault": true
-			}
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
