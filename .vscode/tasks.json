@@ -15,8 +15,6 @@
                 "-stdlib=libc++",
                 "-g",
                 "${file}",
-                // "${fileDirname}/*.cpp",
-                // "${workspaceFolder}/*.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-Wall",
