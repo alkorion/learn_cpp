@@ -14,11 +14,11 @@
                 "-std=c++17",
                 "-stdlib=libc++",
                 "-g",
-                // "${file}",
-                "${workspaceFolder}/*.cpp",
+                "${file}",
+                // "${workspaceFolder}/*.cpp",
                 "-o",
-                // "${fileDirname}/${fileBasenameNoExtension}",
-                "${workspaceFolder}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                // "${workspaceFolder}/${fileBasenameNoExtension}"
                 "-Wall",
                 "-Wextra",
                 "-Wpedantic"
