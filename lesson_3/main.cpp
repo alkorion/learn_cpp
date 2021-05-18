@@ -1,25 +1,27 @@
 #include <iostream>
  
-int readNumber()
-{
-	std::cout << "Please enter a number:";
-	int x {};
-	std::cin >> x;
-	return x;
+void d()
+{ // here
 }
  
-void writeAnswer(int x)
+void c()
 {
-	std::cout << "The quotient is:" << x;
+}
+ 
+void b()
+{
+	c();
+	d();
+}
+ 
+void a()
+{
+	b();
 }
  
 int main()
 {
-	int x{ };
-	int y{ };
-	x = readNumber();
-	x = readNumber();
-	writeAnswer(x/y);
+	a();
  
 	return 0;
 }
