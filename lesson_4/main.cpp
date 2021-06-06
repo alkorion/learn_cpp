@@ -15,4 +15,6 @@ int main() {
     age_per_letter =  static_cast<double>(age) / static_cast<double>(name.length()) ;
 
     std::cout << "You've lived " << age_per_letter << " years for each letter in your name.\n";
+
+    return 0;
 }
