@@ -1,15 +1,9 @@
 #include <iostream>
 
 bool passOrFail() {
-    static int x = 0;
-    
-    if (x < 3) {
-        x += 1;
-        return true;
-    }
-    else {
-        return false;
-    }
+    static int x { 0 };
+    x += 1;
+        return (x <= 3);
 }
 
 int main()
