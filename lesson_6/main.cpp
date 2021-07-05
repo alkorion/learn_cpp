@@ -2,7 +2,7 @@
 
 bool passOrFail() {
     static int x { 0 };
-    x += 1;
+    x++;
         return (x <= 3);
 }
 
