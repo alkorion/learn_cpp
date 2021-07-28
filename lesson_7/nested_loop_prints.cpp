@@ -35,12 +35,37 @@ void quiz_3() {
         --outer;
     }
 }
+
+void quiz_4() {
+    int outer{ 1 };
+    while (outer <= 5)
+    {
+        // loop between 1 and outer
+        int inner{ 5 };
+        while (inner >= 1)
+        {
+            if (inner > outer)
+                std::cout << ' ';
+            else
+                std::cout << inner;
+
+            std::cout << ' ';
+            --inner;
+        }
+
+        // print a newline at the end of each row
+        std::cout << '\n';
+        ++outer;
+    }
+}
  
 int main()
 {
     print_example();
     std::cout << '\n';
     quiz_3();
+    std::cout << '\n';
+    quiz_4();
 
     return 0;
 }
