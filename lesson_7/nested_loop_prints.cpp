@@ -17,12 +17,30 @@ void print_example() {
         ++outer;
     }
 }
+
+void quiz_3() {
+    int outer{ 5 };
+    while (outer >= 1)
+    {
+        // loop between outer and 1
+        int inner{ outer };
+        while (inner >= 1)
+        {
+            std::cout << inner << ' ';
+            --inner;
+        }
+
+        // print a newline at the end of each row
+        std::cout << '\n';
+        --outer;
+    }
+}
  
-// Loop between 1 and 5
 int main()
 {
     print_example();
+    std::cout << '\n';
+    quiz_3();
 
-    
     return 0;
 }
