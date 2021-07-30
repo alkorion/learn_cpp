@@ -4,6 +4,18 @@
 bool isPrime(int x)
 {
     // write this function using a for loop
+
+    // base case of 0 or 1 handled
+    if (x == 0 || x == 1)
+        return false;
+
+    // progressively loop through smaller divisors until reaching 1
+    for (int divisor{x-1}; divisor > 1; divisor--) {
+        if (x % divisor == 0)
+            return false;
+    }
+
+    return true;
 }
  
 int main()
@@ -27,7 +39,7 @@ int main()
     assert(!isPrime(99));
     assert(isPrime(13417));
  
-    std::cout << "Success!";
+    std::cout << "Success!\n";
  
     return 0;
 }
