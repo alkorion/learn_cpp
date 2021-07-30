@@ -24,13 +24,15 @@ int main()
     std::cout << "Enter the initial height of the tower in meters: ";
     double initialHeight;
     std::cin >> initialHeight;
-	
-    calculateAndPrintHeight(initialHeight, 0);
-    calculateAndPrintHeight(initialHeight, 1);
-    calculateAndPrintHeight(initialHeight, 2);
-    calculateAndPrintHeight(initialHeight, 3);
-    calculateAndPrintHeight(initialHeight, 4);
-    calculateAndPrintHeight(initialHeight, 5);
-	
+
+    int time {0};
+    double height{initialHeight};
+
+    while (height > 0) {
+        calculateAndPrintHeight(initialHeight, time);
+        height = calculateHeight(initialHeight, time);
+        time++;
+    }
+
     return 0;
 }
