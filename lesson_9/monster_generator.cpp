@@ -15,18 +15,21 @@ struct Monster {
 };
 
 std::string type_to_string(MonsterType t) {
-    if (t == MonsterType::ogre)
-        return "Ogre";
-    else if (t == MonsterType::dragon)
-        return "Dragon";
-    else if (t == MonsterType::orc)
-        return "Orc";
-    else if (t == MonsterType::giant_spider)
-        return "Giant Spider";
-    else if (t == MonsterType::slime)
-        return "Slime";
-    else
-        return "<unknown type>";
+    switch (t) {
+        case MonsterType::ogre:
+            return "Ogre";
+        case MonsterType::dragon:
+            return "Dragon";
+        case MonsterType::orc:
+            return "Orc";
+        case MonsterType::giant_spider:
+            return "Giant Spider";
+        case MonsterType::slime:
+            return "Slime";
+        default:
+            return "Unknown Type";
+    }
+
 }
 
 void printMonster(Monster m) {
