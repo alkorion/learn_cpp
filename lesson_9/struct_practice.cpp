@@ -20,6 +20,10 @@ Advertising avg_rev_per_click() {
 }
 
 void print_ad_revenue(Advertising ad) {
+    std::cout << "Total ads shown was: " << ad.ads_shown << '\n';
+    std::cout << "Percentage of ads clicked was: " << ad.percent_clicked*100 << "%\n";
+    std::cout << "Average revenue per click was: $" << ad.avg_rev_per_click << '\n';
+
     std::cout << "Total revenue was: $" << ad.ads_shown * ad.percent_clicked * ad.avg_rev_per_click << '\n';
 }
 
