@@ -22,5 +22,14 @@ int main() {
     int num_legs[Animals::max_animals]{ 2, 4, 4, 4, 2, 0 };
     std::cout << "An elephant has " << num_legs[Animals::elephant] << " legs.\n";
 
+    // 9.3 Quiz #1
+    constexpr int array[]{ 4, 6, 7, 3, 8, 2, 1, 9, 5 };
+    int array_size{ static_cast<int>(std::size(array)) };
+
+    for (int i{0}; i < array_size; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << '\n';
+
     return 0;
 }
