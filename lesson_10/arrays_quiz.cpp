@@ -24,9 +24,8 @@ int main() {
 
     // 9.3 Quiz #1
     constexpr int array[]{ 4, 6, 7, 3, 8, 2, 1, 9, 5 };
-    int array_size{ static_cast<int>(std::size(array)) };
 
-    for (int i{0}; i < array_size; ++i) {
+    for (int i{0}; i < static_cast<int>(std::size(array)); ++i) {
         std::cout << array[i] << " ";
     }
     std::cout << '\n';
