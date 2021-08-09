@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iterator>
 
-// 9.2 Quiz #2
+// 10.2 Quiz #2
 namespace Animals {
     enum Animals {
         chicken,
@@ -15,14 +15,14 @@ namespace Animals {
 }
 
 int main() {
-    // 9.2 Quiz #1
+    // 10.2 Quiz #1
     double yearly_temps[365]{ 0.0 };
 
-    // 9.2 Quiz #2
+    // 10.2 Quiz #2
     int num_legs[Animals::max_animals]{ 2, 4, 4, 4, 2, 0 };
     std::cout << "An elephant has " << num_legs[Animals::elephant] << " legs.\n";
 
-    // 9.3 Quiz #1
+    // 10.3 Quiz #1
     constexpr int array[]{ 4, 6, 7, 3, 8, 2, 1, 9, 5 };
 
     for (int i{0}; i < static_cast<int>(std::size(array)); ++i) {

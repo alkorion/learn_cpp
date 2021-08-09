@@ -10,10 +10,10 @@ int get_user_int() {
 }
 
 int main() {
-    // 9.3 Quiz #1
+    // 10.3 Quiz #1
     constexpr int array[]{ 4, 6, 7, 3, 8, 2, 1, 9, 5 };
 
-    // 9.3 Quiz #2
+    // 10.3 Quiz #2
     int user_int {0};
 
     // repeatedly prompt user for an int value between 1 and 9 
