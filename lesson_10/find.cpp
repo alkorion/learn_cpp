@@ -1,7 +1,14 @@
 #include <iostream>
 #include <iterator>
  
-// ...
+int* find(int* first, int* last, int val) {
+    for (int* ptr{first}; ptr != last; ++ptr) {
+        if (*ptr == val) {
+            return ptr;
+        }
+    }
+    return last;
+}
  
 int main()
 {
