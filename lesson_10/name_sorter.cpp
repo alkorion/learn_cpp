@@ -28,5 +28,7 @@ int main() {
         // std::cin >> name_array[i];
     }
 
+    delete[] name_array;
+
     return 0;
 }
