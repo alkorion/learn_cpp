@@ -14,7 +14,7 @@ int main() {
     // Ask the user to enter each name
     for (int i{0}; i < num_names; ++i) {
         std::cout << "Enter name #" << i+1 << ": ";
-        std::cin >> name_array[i];
+        std::getline(std::cin >> std::ws, name_array[i]);
     }
 
     // Sort the names using std::sort
