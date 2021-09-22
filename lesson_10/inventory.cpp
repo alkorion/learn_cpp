@@ -1,28 +1,27 @@
 #include <iostream>
+#include <numeric> // std::reduce
 #include <array>
 
-enum Item {
+enum ItemTypes
+{
     health_potions,
     torches,
-    arrows
+    arrows,
+    max_items
 };
 
-int countTotalItems(const std::array<int,3>& inventory) {
-    int sum { 0 };
-
-    for (int item_count : inventory) {
-        sum += item_count;
-    }
-
-    return sum;
+int countTotalItems(const std::array<int, ItemTypes::max_items>& inventory)
+{
+    return std::reduce(inventory.begin(), inventory.end());
 }
 
-int main() {
+int main()
+{
     // initialize player inventory
     std::array player_inventory { 2, 5, 10};
 
     std::cout << "Total items held: " << countTotalItems(player_inventory) << '\n';
-    std::cout << "Number of torches: " << player_inventory[torches] << '\n';
+    std::cout << "Number of torches: " << player_inventory[ItemTypes::torches] << '\n';
 
     return 0;
 }
