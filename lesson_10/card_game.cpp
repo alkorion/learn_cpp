@@ -65,13 +65,15 @@ void printCard(const Card& card) {
     }
 }
 
-std::array<Card,52> createDeck() {
-    std::array<Card,52> deck;
+using deck_type = std::array<Card,52>;
+
+deck_type createDeck() {
+    deck_type deck;
 
     int index{0};
 
-    for (int suit{0}; suit<4; ++suit) {
-        for (int rank{0}; rank<13; ++rank) {
+    for (int suit{0}; suit < static_cast<int>(Suit::max_suits); ++suit) {
+        for (int rank{0}; rank < static_cast<int>(Rank::max_ranks); ++rank) {
             Card card;
             card.rank = static_cast<Rank>(rank);
             card.suit = static_cast<Suit>(suit);
@@ -85,7 +87,7 @@ std::array<Card,52> createDeck() {
 }
 
 int main() {
-    std::array<Card,52> deck = createDeck();
+    deck_type deck = createDeck();
 
     return 0;
 }
