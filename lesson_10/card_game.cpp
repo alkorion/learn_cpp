@@ -34,53 +34,34 @@ struct Card {
 };
 
 void printCard(const Card& card) {
-    std::string rank;
-    std::string suit;
     switch(card.rank) {
-        case Rank::rank_2:
-            rank = "2";
-        case Rank::rank_3:
-            rank = "3";
-        case Rank::rank_4:
-            rank = "4";
-        case Rank::rank_5:
-            rank = "5";
-        case Rank::rank_6:
-            rank = "6";
-        case Rank::rank_7:
-            rank = "7";
-        case Rank::rank_8:
-            rank = "8";
-        case Rank::rank_9:
-            rank = "9";
-        case Rank::rank_10:
-            rank = "10";
-        case Rank::rank_jack:
-            rank = "J";
-        case Rank::rank_queen:
-            rank = "Q";
-        case Rank::rank_king:
-            rank = "K";
-        case Rank::rank_ace:
-            rank = "A";
+        case Rank::rank_2:      std::cout << '2';    break;
+        case Rank::rank_3:      std::cout << '3';    break;
+        case Rank::rank_4:      std::cout << '4';    break;
+        case Rank::rank_5:      std::cout << '5';    break;
+        case Rank::rank_6:      std::cout << '6';    break;
+        case Rank::rank_7:      std::cout << '7';    break;
+        case Rank::rank_8:      std::cout << '8';    break;
+        case Rank::rank_9:      std::cout << '9';    break;
+        case Rank::rank_10:     std::cout << 'T';    break;
+        case Rank::rank_jack:   std::cout << 'J';    break;
+        case Rank::rank_queen:  std::cout << 'Q';    break;
+        case Rank::rank_king:   std::cout << 'K';    break;
+        case Rank::rank_ace:    std::cout << 'A';    break;
         default:
-            std::cout << "Card Rank error\n";
+            std::cout << '?';
+            std::cerr << "Card Rank error\n";
     }
 
     switch(card.suit) {
-        case Suit::clubs:
-            suit = "C";
-        case Suit::diamonds:
-            suit = "D";
-        case Suit::hearts:
-            suit = "H";
-        case Suit::spades:
-            suit = "S";
+        case Suit::clubs:       std::cout << 'C';    break;
+        case Suit::diamonds:    std::cout << 'D';    break;
+        case Suit::hearts:      std::cout << 'H';    break;
+        case Suit::spades:      std::cout << 'S';    break;
         default:
-            std::cout << "Card Suit error\n";
+            std::cout << '?';
+            std::cerr << "Card Suit error\n";
     }
-
-    std::cout << rank << suit << '\n';
 }
 
 int main() {
