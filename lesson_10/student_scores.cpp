@@ -24,7 +24,6 @@ std::vector<Student> prompt_student_info()
         std::cout << "Please enter student name: ";
         std::cin >> students[i].name;
 
-
         std::cout << "Please enter the grade for " << students[i].name << ": ";
         std::cin >> students[i].grade;
     }
@@ -45,6 +44,11 @@ int main()
     std::vector<Student> user_students;
 
     user_students = prompt_student_info();
+
+    std::sort(user_students.begin(), user_students.end(), [](Student a, Student b) {
+        return a.grade > b.grade;
+    });
+
     print_all_students(user_students);
 
     return 0;
