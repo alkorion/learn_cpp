@@ -32,12 +32,17 @@ std::vector<Student> prompt_student_info()
     return students;
 }
 
-void print_all_students(const std::vector<Student>& students) // should the ref be const or not?
+void print_all_students(const std::vector<Student>& students)
 {
-    for (const auto stud : students)
+    for (const auto& stud : students)
     {
         std::cout << stud.name << " got a grade of " << stud.grade << '\n';
     }
+}
+
+bool compare_sudents(const Student& a, const Student& b)
+{
+    return a.grade > b.grade;
 }
 
 int main()
@@ -46,9 +51,7 @@ int main()
 
     user_students = prompt_student_info();
 
-    std::sort(user_students.begin(), user_students.end(), [](Student a, Student b) {
-        return a.grade > b.grade;
-    });
+    std::sort(user_students.begin(), user_students.end(), compare_sudents);
 
     print_all_students(user_students);
 
