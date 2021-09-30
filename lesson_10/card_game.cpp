@@ -27,6 +27,11 @@ enum class Suit {
     max_suits
 };
 
+struct Card {
+    Rank rank{};
+    Suit suit{};
+};
+
 int main() {
     
     return 0;
