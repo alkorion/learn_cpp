@@ -2,6 +2,7 @@
 #include <string>
 #include <array>
 #include <algorithm>
+#include <ctime>
 #include <random>
 
 enum class Rank {
@@ -98,9 +99,9 @@ void printDeck(const deck_type& deck) {
 }
 
 void shuffleDeck(deck_type& deck) {
-    std::random_device rd;
-    std::mt19937 g(rd());
-    std::shuffle(deck.begin(), deck.end(), g);
+    // only initialize mt once since it's static
+    static std::mt19937 mt{ static_cast<std::mt19937::result_type>(std::time(nullptr)) };
+    std::shuffle(deck.begin(), deck.end(), mt);
 }
 
 int main() {
