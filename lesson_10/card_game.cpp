@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 enum class Rank {
     rank_2,
@@ -20,7 +21,7 @@ enum class Rank {
 
 enum class Suit {
     clubs,
-    daimonds,
+    diamonds,
     hearts,
     spades,
 
@@ -31,6 +32,56 @@ struct Card {
     Rank rank{};
     Suit suit{};
 };
+
+void printCard(const Card& card) {
+    std::string rank;
+    std::string suit;
+    switch(card.rank) {
+        case Rank::rank_2:
+            rank = "2";
+        case Rank::rank_3:
+            rank = "3";
+        case Rank::rank_4:
+            rank = "4";
+        case Rank::rank_5:
+            rank = "5";
+        case Rank::rank_6:
+            rank = "6";
+        case Rank::rank_7:
+            rank = "7";
+        case Rank::rank_8:
+            rank = "8";
+        case Rank::rank_9:
+            rank = "9";
+        case Rank::rank_10:
+            rank = "10";
+        case Rank::rank_jack:
+            rank = "J";
+        case Rank::rank_queen:
+            rank = "Q";
+        case Rank::rank_king:
+            rank = "K";
+        case Rank::rank_ace:
+            rank = "A";
+        default:
+            std::cout << "Card Rank error\n";
+    }
+
+    switch(card.suit) {
+        case Suit::clubs:
+            suit = "C";
+        case Suit::diamonds:
+            suit = "D";
+        case Suit::hearts:
+            suit = "H";
+        case Suit::spades:
+            suit = "S";
+        default:
+            std::cout << "Card Suit error\n";
+    }
+
+    std::cout << rank << suit << '\n';
+}
 
 int main() {
     
