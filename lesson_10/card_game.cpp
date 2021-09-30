@@ -86,7 +86,7 @@ deck_type createDeck() {
     return deck;
 }
 
-void printDeck(deck_type deck) {
+void printDeck(const deck_type& deck) {
     for (Card card : deck) {
         
         printCard(card);
