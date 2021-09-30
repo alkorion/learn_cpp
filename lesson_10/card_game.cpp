@@ -86,8 +86,19 @@ deck_type createDeck() {
     return deck;
 }
 
+void printDeck(deck_type deck) {
+    for (Card card : deck) {
+        
+        printCard(card);
+        std::cout << ' ';
+    }
+    std::cout << '\n';
+}
+
 int main() {
+
     deck_type deck = createDeck();
+    printDeck(deck);
 
     return 0;
 }
