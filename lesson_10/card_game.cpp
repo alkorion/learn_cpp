@@ -104,6 +104,25 @@ void shuffleDeck(deck_type& deck) {
     std::shuffle(deck.begin(), deck.end(), mt);
 }
 
+int getCardValue(const Card& card) {
+    switch (card.rank) {
+        case Rank::rank_2:
+        case Rank::rank_3:
+        case Rank::rank_4:
+        case Rank::rank_5:
+        case Rank::rank_6:
+        case Rank::rank_7:
+        case Rank::rank_8:
+        case Rank::rank_9:
+        case Rank::rank_10:     return static_cast<int>(card.rank) + 2;
+        case Rank::rank_jack:
+        case Rank::rank_queen:
+        case Rank::rank_king:   return 10;  // royal face cards worth 10
+        case Rank::rank_ace:    return 11;
+        default:                return 0;
+    }
+}
+
 int main() {
 
     deck_type deck = createDeck();
@@ -111,6 +130,9 @@ int main() {
 
     shuffleDeck(deck);
     printDeck(deck);
+
+    printCard(deck[0]);
+    std::cout << " has value: " << getCardValue(deck[0]) << '\n';
 
     return 0;
 }
