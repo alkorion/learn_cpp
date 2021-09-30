@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include <algorithm>
 
 struct Student
@@ -33,7 +34,7 @@ std::vector<Student> prompt_student_info()
 
 void print_all_students(const std::vector<Student>& students) // should the ref be const or not?
 {
-    for (Student stud : students)
+    for (const auto stud : students)
     {
         std::cout << stud.name << " got a grade of " << stud.grade << '\n';
     }
