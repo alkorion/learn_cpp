@@ -1,13 +1,10 @@
 #include <iostream>
 
 void print_chars(const char* array_start) {
-    char current_char{ *array_start };
-    int offset{ 0 };
 
-    while (current_char != '\0') {
-        current_char = *(array_start + offset);
-        std::cout << current_char;
-        ++offset;
+    while (*array_start != '\0') {
+        std::cout << *array_start;
+        ++array_start;
     }
 
 }
