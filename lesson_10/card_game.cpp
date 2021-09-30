@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <algorithm>
+#include <random>
 
 enum class Rank {
     rank_2,
@@ -95,9 +97,18 @@ void printDeck(const deck_type& deck) {
     std::cout << '\n';
 }
 
+void shuffleDeck(deck_type& deck) {
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(deck.begin(), deck.end(), g);
+}
+
 int main() {
 
     deck_type deck = createDeck();
+    printDeck(deck);
+
+    shuffleDeck(deck);
     printDeck(deck);
 
     return 0;
