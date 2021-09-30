@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <array>
 
 enum class Rank {
     rank_2,
@@ -64,7 +65,27 @@ void printCard(const Card& card) {
     }
 }
 
+std::array<Card,52> createDeck() {
+    std::array<Card,52> deck;
+
+    int index{0};
+
+    for (int suit{0}; suit<4; ++suit) {
+        for (int rank{0}; rank<13; ++rank) {
+            Card card;
+            card.rank = static_cast<Rank>(rank);
+            card.suit = static_cast<Suit>(suit);
+
+            deck[index] = card;
+            ++index;
+        }
+    }
+
+    return deck;
+}
+
 int main() {
-    
+    std::array<Card,52> deck = createDeck();
+
     return 0;
 }
