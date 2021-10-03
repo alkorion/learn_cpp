@@ -59,6 +59,9 @@ bool playBlackjack(deck_type deck) {
     dealer_score += getCardValue(deck[0]);
     player_score += getCardValue(deck[1]) + getCardValue(deck[2]);
 
+    if (player_score > 21) // edge-case player draws two aces
+        player_score = 12;
+
     // create indext to track top of deck
     int card_index {3}; // start at index 3 since 3 cards have already been drawn
 
