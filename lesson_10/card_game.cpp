@@ -123,16 +123,16 @@ int getCardValue(const Card& card) {
     }
 }
 
-int main() {
+// int main() {
 
-    deck_type deck = createDeck();
-    printDeck(deck);
+//     deck_type deck = createDeck();
+//     printDeck(deck);
 
-    shuffleDeck(deck);
-    printDeck(deck);
+//     shuffleDeck(deck);
+//     printDeck(deck);
 
-    printCard(deck[0]);
-    std::cout << " has value: " << getCardValue(deck[0]) << '\n';
+//     printCard(deck[0]);
+//     std::cout << " has value: " << getCardValue(deck[0]) << '\n';
 
-    return 0;
-}
+//     return 0;
+// }
